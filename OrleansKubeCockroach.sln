@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo", "Silo\Silo.csproj", "{0CA3FE7E-28D9-44D3-8A5F-C922288FAC89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldGrains", "HelloWorldGrains\HelloWorldGrains.csproj", "{AB0A5D01-FBE9-4885-B5C6-23148456BB08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA3FE7E-28D9-44D3-8A5F-C922288FAC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA3FE7E-28D9-44D3-8A5F-C922288FAC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA3FE7E-28D9-44D3-8A5F-C922288FAC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA3FE7E-28D9-44D3-8A5F-C922288FAC89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0A5D01-FBE9-4885-B5C6-23148456BB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0A5D01-FBE9-4885-B5C6-23148456BB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0A5D01-FBE9-4885-B5C6-23148456BB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0A5D01-FBE9-4885-B5C6-23148456BB08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A079F1C-EC13-4B33-B08F-A0735CA8D542}
+	EndGlobalSection
+EndGlobal

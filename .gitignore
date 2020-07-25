@@ -29,6 +29,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -45,6 +46,10 @@ Generated\ Files/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
@@ -185,6 +190,8 @@ PublishScripts/
 
 # NuGet Packages
 *.nupkg
+# NuGet Symbol Packages
+*.snupkg
 # The packages folder can be ignored because of Package Restore
 **/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
@@ -261,6 +268,9 @@ ServiceFabricBackup/
 *.bim_*.settings
 *.rptproj.rsuser
 *- Backup*.rdl
+*- [Bb]ackup.rdl
+*- [Bb]ackup ([0-9]).rdl
+*- [Bb]ackup ([0-9][0-9]).rdl
 
 # Microsoft Fakes
 FakesAssemblies/
@@ -431,3 +441,5 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+# Ionide (cross platform F# VS Code tools) working folder
+.ionide/

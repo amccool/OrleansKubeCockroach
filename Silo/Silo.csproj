@@ -11,12 +11,14 @@
     <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.2.1" />
     <PackageReference Include="Microsoft.Orleans.OrleansProviders" Version="3.2.1" />
     <PackageReference Include="Microsoft.Orleans.OrleansTelemetryConsumers.Counters" Version="3.2.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="OrleansDashboard" Version="3.1.0" />
   </ItemGroup>
 
   <PropertyGroup>
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
   
   <ItemGroup>
@@ -25,6 +27,9 @@
 
   <ItemGroup>
     <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,11 @@
+# escape=`
+FROM mcr.microsoft.com/dotnet/core/aspnet:latest
+WORKDIR /app
+
+COPY . .
+
+EXPOSE 8080/tcp
+EXPOSE 30000/tcp
+EXPOSE 11111/tcp
+
+CMD ["/bin/bash", "-c", "update-ca-certificates && dotnet Silo.dll"]

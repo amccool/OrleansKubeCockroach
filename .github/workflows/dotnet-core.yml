@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag OrleansKubeCockroach:$(date +%s)
+      run: docker build . --file Dockerfile --tag orleanskubecockroach:$(date +%s)

@@ -7,6 +7,7 @@ using Orleans.Configuration;
 using Orleans.Hosting;
 using Orleans.Runtime;
 using Orleans.Statistics;
+using Orleans.Clustering.Kubernetes;
 using System.Net;
 using System.Threading.Tasks;
 using System.Threading;
@@ -44,11 +45,12 @@ namespace Silo
                           })
                         .UsePerfCounterEnvironmentStatistics()
                         .UseDashboard(options => { })
-                        .UseLocalhostClustering()
+                        //.UseLocalhostClustering()
+                        .UseKubeMembership()
                         .Configure<ClusterOptions>(options =>
                         {
-                            //options.ClusterId = "dev";
-                            //options.ServiceId = "HelloWorldApp";
+                            options.ClusterId = "dev";
+                            options.ServiceId = "HelloWorldApp";
                         })
                         .Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
                         .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloWorldGrain).Assembly).WithReferences())

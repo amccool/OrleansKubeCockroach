@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: orleans-silo2
+    labels:
+        app: kubesilo
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: kubesilo
+    template:
+        metadata:
+            labels:
+                app: kubesilo
+        spec:
+#            serviceAccountName: orleanssilo
+            containers:
+                - name: orleanssilo2
+                  image: silo:dev
+                  imagePullPolicy: Never

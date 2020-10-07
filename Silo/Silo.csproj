@@ -8,11 +8,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.6" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Orleans.OrleansConsulUtils" Version="3.2.2" />
     <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.2.1" />
     <PackageReference Include="Microsoft.Orleans.OrleansProviders" Version="3.2.1" />
     <PackageReference Include="Microsoft.Orleans.OrleansTelemetryConsumers.Counters" Version="3.2.1" />
+    <PackageReference Include="Microsoft.Orleans.OrleansZooKeeperUtils" Version="3.2.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Orleans.Clustering.Kubernetes" Version="2.0.0" />
     <PackageReference Include="OrleansDashboard" Version="3.1.0" />
+    <PackageReference Include="Winton.Extensions.Configuration.Consul" Version="3.1.0" />
   </ItemGroup>
 
   <PropertyGroup>

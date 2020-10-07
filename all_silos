@@ -1,0 +1,92 @@
+Name:             127.0.0.1-11111-333648552
+Namespace:        default
+Labels:           <none>
+Annotations:      <none>
+Address:          127.0.0.1
+API Version:      orleans.dot.net/v1
+Cluster Id:       dev
+Generation:       333648552
+Hostname:         orleans-silo3-f7d6565d6-gkw8n
+I Am Alive Time:  2020-07-28T16:45:53.5914833+00:00
+Kind:             OrleansSilo
+Metadata:
+  Creation Timestamp:  2020-07-28T16:09:17Z
+  Generation:          11
+  Managed Fields:
+    API Version:  orleans.dot.net/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:address:
+      f:clusterId:
+      f:generation:
+      f:hostname:
+      f:iAmAliveTime:
+      f:port:
+      f:proxyPort:
+      f:siloName:
+      f:startTime:
+      f:status:
+      f:suspectingSilos:
+      f:suspectingTimes:
+    Manager:         unknown
+    Operation:       Update
+    Time:            2020-07-28T16:45:53Z
+  Resource Version:  74588
+  Self Link:         /apis/orleans.dot.net/v1/namespaces/default/silos/127.0.0.1-11111-333648552
+  UID:               7a5467cd-f2df-4216-8ad3-e25f0af1d61c
+Port:                11111
+Proxy Port:          30000
+Silo Name:           Silo_e0022
+Start Time:          2020-07-28T16:09:12.4033545+00:00
+Status:              Dead
+Suspecting Silos:
+  127.0.0.1:11111@333648552
+Suspecting Times:
+  2020-07-28 16:45:53.591 GMT
+Events:  <none>
+
+
+Name:             127.0.0.1-11111-333650779
+Namespace:        default
+Labels:           <none>
+Annotations:      <none>
+Address:          127.0.0.1
+API Version:      orleans.dot.net/v1
+Cluster Id:       dev
+Generation:       333650779
+Hostname:         orleans-silo4-7b6746758c-xccks
+I Am Alive Time:  2020-07-28T16:51:27.7050913+00:00
+Kind:             OrleansSilo
+Metadata:
+  Creation Timestamp:  2020-07-28T16:46:26Z
+  Generation:          12
+  Managed Fields:
+    API Version:  orleans.dot.net/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:address:
+      f:clusterId:
+      f:generation:
+      f:hostname:
+      f:iAmAliveTime:
+      f:port:
+      f:proxyPort:
+      f:siloName:
+      f:startTime:
+      f:status:
+      f:suspectingSilos:
+      f:suspectingTimes:
+    Manager:         unknown
+    Operation:       Update
+    Time:            2020-07-28T16:51:27Z
+  Resource Version:  75632
+  Self Link:         /apis/orleans.dot.net/v1/namespaces/default/silos/127.0.0.1-11111-333650779
+  UID:               babb7bf7-5c54-4b6d-bf04-9b3fd96a4423
+Port:                11111
+Proxy Port:          30000
+Silo Name:           Silo_260b4
+Start Time:          2020-07-28T16:46:20.0065471+00:00
+Status:              Active
+Suspecting Silos:
+Suspecting Times:
+Events:  <none>

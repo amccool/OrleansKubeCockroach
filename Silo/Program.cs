@@ -7,11 +7,14 @@ using Orleans.Configuration;
 using Orleans.Hosting;
 using Orleans.Runtime;
 using Orleans.Statistics;
+using Orleans.Clustering.Kubernetes;
 using System.Net;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
 using HelloWorldGrains;
+using Winton.Extensions.Configuration.Consul;
+using Orleans.Providers;
 
 namespace Silo
 {
@@ -23,12 +26,9 @@ namespace Silo
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
                     config.AddJsonFile("appsettings.json", optional: true);
+                    config.AddConsul()
                     config.AddEnvironmentVariables();
-
-                    if (args != null)
-                    {
-                        config.AddCommandLine(args);
-                    }
+                    config.AddCommandLine(args);
                 })
                 .UseOrleans((context, builder) =>
                 {
@@ -44,18 +44,37 @@ namespace Silo
                           })
                         .UsePerfCounterEnvironmentStatistics()
                         .UseDashboard(options => { })
-                        .UseLocalhostClustering()
+                        //.UseLocalhostClustering()
+                        //.UseKubeMembership()
+
+                        .UseZooKeeperClustering((ZooKeeperClusteringSiloOptions opts) =>
+                        {
+                            opts.ConnectionString = "zookeeper-1595957302.default.svc.cluster.local:2181";
+                        })
+
+                        //.UseConsulClustering(opts=> { })
+
                         .Configure<ClusterOptions>(options =>
                         {
-                            //options.ClusterId = "dev";
-                            //options.ServiceId = "HelloWorldApp";
+                            options.ClusterId = "dev";
+                            options.ServiceId = "HelloWorldApp";
                         })
-                        .Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
+                        .ConfigureEndpoints(System.Net.Dns.GetHostName(), 11111, 30000)
+                        //.Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
+                        //.Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Any)
+
                         .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloWorldGrain).Assembly).WithReferences())
                         //.ConfigureApplicationParts(parts => parts.AddFromApplicationBaseDirectory())
                         .AddMemoryGrainStorage(name: "ParrotStorage")
-                        .AddMemoryGrainStorage(name: "PubSubStore")
-                        .AddSimpleMessageStreamProvider(name: "Parrot")
+                        //.AddMemoryGrainStorage(name: "PubSubStore")
+                        .AddMemoryStreams<DefaultMemoryMessageBodySerializer>("Parrot", b =>
+                        {
+                            //b.ConfigurePartitioning(partitionCount);
+                            b.ConfigurePullingAgent(ob => ob.Configure(options =>
+                                options.GetQueueMsgsTimerPeriod = TimeSpan.FromMilliseconds(5)));
+                            b.
+                        })
+                        //.AddSimpleMessageStreamProvider(name: "Parrot")
                     //    .AddAzureBlobGrainStorage(
                     //        name: "profileStore",
                     //        configureOptions: options =>
